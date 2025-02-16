@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if the element exists
+      const myDiv = document.getElementById('myDiv');
+      if (myDiv) {
+        myDiv.innerHTML += "<p>This text should append.</p>";
+      } else {
+        console.error('Element with id "myDiv" not found.');
+      }
+    });
+  </script>
+</body>
+</html>
